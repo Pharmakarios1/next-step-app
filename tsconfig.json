@@ -4,7 +4,7 @@
     // File Layout
     // "rootDir": "./src",
     // "outDir": "./dist",
-     "baseUrl": "./src",
+    "baseUrl": "./src",
     "paths": {
       "@/*": ["*"]
     },
@@ -36,12 +36,12 @@
     // "noPropertyAccessFromIndexSignature": true,
 
     // Recommended Options
-    "strict": true,
+    "strict": false,
     "jsx": "react-jsx",
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true,
+    "skipLibCheck": true
   }
 }

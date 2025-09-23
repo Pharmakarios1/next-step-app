@@ -1,5 +1,7 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600&family=Roboto+Mono&display=swap');
+
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -116,5 +118,26 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@theme {
+  /* custom styles */
+  --color-brand: #4f46e5;
+  --font-head: 'Inter', 'sans-serif';
+  --font-body:"Montserrat", 'sans-serif';
+}
+@layer components {
+  .header-layout {
+    @apply w-full lg:max-w-[1200px] px-5 mx-auto flex justify-between items-center h-16 font-head;
+  }
+  .text-gradient {
+    @apply text-transparent bg-gradient-to-tr from-green-400 via-blue-800 to-fuchsia-600 bg-clip-text;
+  }
+  .text-responsive {
+    @apply text-sm md:text-xl;
+  }
+  .bg-gradient {
+    @apply bg-gradient-to-r from-green-400 to-blue-600;
   }
 }
