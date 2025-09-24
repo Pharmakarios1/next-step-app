@@ -5,8 +5,8 @@ const Home = () => {
   return (
     <main className="main-layout">
       <CustomCarousel />
-      <div className=' w-full md:max-w-2/3 mx-auto'>
-        <p className='text-xl text-center font-head font-bold '>Nextlot makes every auction thrilling, let you bid confidently, win big, and celebrate every victory together</p>
+      <div className=' w-full md:max-w-2/3 mx-auto my-10'>
+        <p className='text-xl text-center  font-bold '>Nextlot makes every auction thrilling, let you bid confidently, win big, and celebrate every victory together</p>
       </div>
       <CustomTabs />
     </main>

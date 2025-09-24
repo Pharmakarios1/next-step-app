@@ -5,22 +5,22 @@ const CustomCarousel = () => {
   const AuctoCarousel = [
     {
       id: 1,
-      boldtext: 'The new generation Auction with ease!',
+      boldtext: 'Bid smart, Win Big Bounties!',
       minitext: 'Auction your less needed valuable for quick cash',
     },
     {
       id: 2,
-      boldtext: 'Bid in real time with Confidence',
+      boldtext: 'Your Next Lot, Your Next Win',
       minitext: 'All bids are sync in realtime, no room for delays',
     },
     {
       id: 3,
-      boldtext: 'Bidboard shows leading Bidders',
+      boldtext: 'Auction the Future, One Lot at a Time',
       minitext: 'Checkout Bidboard for leaders in this industry',
     },
     {
       id: 4,
-      boldtext: 'Compare prices of items in Auctions',
+      boldtext: 'Bid Boldly, Win Confidently',
       minitext: 'Take a closer look at bids to for more choices',
     },
   ]
@@ -34,11 +34,11 @@ const CustomCarousel = () => {
       orientation="vertical"
       className="w-full mx-auto max-w-[768px]  mt-5 px-10 "
     >
-      <CarouselContent className="mt-1 h-[75px]  text-center">
+      <CarouselContent className="mt-1 h-[80px]  text-center">
         {AuctoCarousel.map((_, index) => (
           <CarouselItem key={index} className="pt-1 md:basis-2/3">
             <div className="p-1">
-              <span className=" text-3xl sm:text-4xl  md:text-5xl  font-body font-bold text-gradient">
+              <span className=" text-4xl sm:text-4xl  md:text-5xl  font-body font-bold text-gradient">
                 {_.boldtext}
               </span>
               {/* <p className="text-[10px] sm:text-base text-gray-400">{_.minitext}</p> */}
