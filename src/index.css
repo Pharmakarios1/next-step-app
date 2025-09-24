@@ -125,17 +125,20 @@
   /* custom styles */
   --color-brand: #4f46e5;
   --font-head: 'Inter', 'sans-serif';
-  --font-body:"Montserrat", 'sans-serif';
+  --font-body: 'Montserrat', 'sans-serif';
 }
 @layer components {
   .header-layout {
-    @apply w-full lg:max-w-[1200px] px-5 mx-auto flex justify-between items-center h-16 font-head;
+    @apply w-full lg:max-w-[1200px] px-5 mx-auto flex justify-between items-center h-16 font-body;
+  }
+  .main-layout {
+    @apply w-full lg:max-w-[1200px] mx-auto px-5;
   }
   .text-gradient {
     @apply text-transparent bg-gradient-to-tr from-green-400 via-blue-800 to-fuchsia-600 bg-clip-text;
   }
   .text-responsive {
-    @apply text-sm md:text-xl;
+    @apply text-[12px] md:text-xl;
   }
   .bg-gradient {
     @apply bg-gradient-to-r from-green-400 to-blue-600;
