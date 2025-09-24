@@ -22,10 +22,10 @@ const Header = ({ isActive }) => {
       <header className="h-16 sticky z-1  shadow-sm border-b border-gray-200 backdrop-blur-2xl ">
         <div className="header-layout">
           <Link to={"/"} className="logo flex place-items-center gap-2">
-            <span className="w-6 h-6 md:w-8 md:h-8 border-[1px] rounded-full grid place-content-center">
+            <span className="w-8 h-8 border-[1px] rounded-full grid place-content-center">
               <SiHandshakeProtocol className="text-green-400 text-md md:text-2xl" />
             </span>{' '}
-            <p className="text-gradient text-responsive ">NextLot</p>
+            <p className="text-gradient text-xl ">NextLot</p>
           </Link>
           <nav className="hidden  md:block">
             <ul className="header-layout gap-3 p-2 ">

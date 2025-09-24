@@ -138,7 +138,7 @@
     @apply text-transparent bg-gradient-to-tr from-green-400 via-blue-800 to-fuchsia-600 bg-clip-text;
   }
   .text-responsive {
-    @apply text-[12px] md:text-xl;
+    @apply text-xl md:text-2xl;
   }
   .bg-gradient {
     @apply bg-gradient-to-r from-green-400 to-blue-600;

@@ -34,14 +34,14 @@ const CustomCarousel = () => {
       orientation="vertical"
       className="w-full mx-auto max-w-[768px]  mt-5 px-10 "
     >
-      <CarouselContent className="mt-1 h-[140px]  text-center">
+      <CarouselContent className="mt-1 h-[75px]  text-center">
         {AuctoCarousel.map((_, index) => (
           <CarouselItem key={index} className="pt-1 md:basis-2/3">
             <div className="p-1">
-              <span className=" text-xl sm:text-4xl  md:text-5xl  font-body font-bold text-gradient">
+              <span className=" text-3xl sm:text-4xl  md:text-5xl  font-body font-bold text-gradient">
                 {_.boldtext}
               </span>
-              <p className="text-[10px] sm:text-base text-gray-400">{_.minitext}</p>
+              {/* <p className="text-[10px] sm:text-base text-gray-400">{_.minitext}</p> */}
             </div>
           </CarouselItem>
         ))}
