@@ -14,7 +14,7 @@ const CustomCarousel = () => {
     },
     {
       id: 3,
-      boldtext: 'Seamless Auctions with Nextlot.',
+      boldtext: 'Offering Seamless Auctions',
     },
     {
       id: 4,
@@ -38,7 +38,7 @@ const CustomCarousel = () => {
       orientation="vertical"
       className="w-full mx-auto max-w-[768px]  px-5 "
     >
-      <CarouselContent className="max-h-54 md:max-h-60  text-center">
+      <CarouselContent className="max-h-60  text-center">
         {AuctoCarousel.map((_, index) => (
           <CarouselItem key={index} className=" md:basis-[50%]">
             <div className="">

@@ -1,26 +1,27 @@
+import { Button } from '../ui/button.js'
+import { Link } from 'react-router-dom'
+import { cn } from '@/lib/utils.js'
+import type { ReactElement } from 'react'
 
-// import { Button } from '../ui/button.js'
-// import { Link } from 'react-router-dom'
-// import { cn } from '@/lib/utils.js'
+interface BtnProps {
+  icons?: ReactElement
+  onClick?: () => void
+  text: string
+  link?: string
+  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link'
+  className: string
+}
 
-// interface BtnProps{
-//     icons?: string;
-//     text:string,
-//     link: string,
-//     variant:string
-// }
+const CustomButton: React.FC<BtnProps> = (props) => {
+  const { icons, text, link, variant, className, onClick } = props
+  return (
+    <Button asChild variant={variant} className={`cursor-pointer ${className}`} onClick={onClick}>
+      <Link to={link}>
+        <p>{text}</p>
+        {icons}
+      </Link>
+    </Button>
+  )
+}
 
-
-// const CustomButton : React.FC<BtnProps> = (props) => {
-//     const {icons,text, link, variant} = props
-//   return (
-//     <Button asChild variant={props.variant} className="border-[1px]">
-//             <Link to={props.link}>
-//               {props.icons}
-//               <p className="hidden md:block">{props.text}</p>
-//             </Link>
-//           </Button>
-//   )
-// }
-
-// export default CustomButton
+export default CustomButton
