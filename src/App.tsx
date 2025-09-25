@@ -18,9 +18,32 @@ const router = createBrowserRouter([
       { path: 'about', element: <About /> },
       { path: '/bidboard', element: <Bidboard /> },
       { path: '/lotmatch', element: <Lotmatch /> },
-      { path: '/login', element:<SignedOut > <Login /></SignedOut> },
-      { path: '/signup', element:<SignedOut><Signup /></SignedOut>  },
-      { path: '/dashboard', element:   <SignedIn> <Dashboard /></SignedIn> },
+      {
+        path: '/login',
+        element: (
+          <SignedOut>
+            {' '}
+            <Login />
+          </SignedOut>
+        ),
+      },
+      {
+        path: '/signup',
+        element: (
+          <SignedOut>
+            <Signup />
+          </SignedOut>
+        ),
+      },
+      {
+        path: '/dashboard',
+        element: (
+          <SignedIn>
+            {' '}
+            <Dashboard />
+          </SignedIn>
+        ),
+      },
     ],
   },
 ])

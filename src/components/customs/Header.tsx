@@ -8,7 +8,6 @@ import { Home, Scale, Trophy } from 'lucide-react'
 import { cn } from '@/lib/utils.js'
 import { Button } from '../ui/button.js'
 
-
 const Header = ({ isActive }) => {
   const [active, setActive] = useState('home')
 
@@ -21,7 +20,7 @@ const Header = ({ isActive }) => {
     <>
       <header className="h-16 sticky z-1  shadow-sm border-b border-gray-200 backdrop-blur-2xl ">
         <div className="header-layout">
-          <Link to={"/"} className="logo flex place-items-center gap-2">
+          <Link to={'/'} className="logo flex place-items-center gap-2">
             <span className="w-8 h-8 border-[1px] rounded-full grid place-content-center">
               <SiHandshakeProtocol className="text-green-400 text-md md:text-2xl" />
             </span>{' '}
