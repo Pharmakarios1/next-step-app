@@ -1,7 +1,5 @@
-import React from 'react'
-
-const Lotmatch = () => {
-  return <div>Lotmatch</div>
+const Compare = () => {
+  return <div>Compare</div>
 }
 
-export default Lotmatch
+export default Compare

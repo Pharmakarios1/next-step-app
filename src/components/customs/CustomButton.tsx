@@ -10,12 +10,19 @@ interface BtnProps {
   link?: string
   variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link'
   className: string
+  disabled?: boolean
 }
 
 const CustomButton: React.FC<BtnProps> = (props) => {
-  const { icons, text, link, variant, className, onClick } = props
+  const { icons, text, link, variant, className, onClick, disabled } = props
   return (
-    <Button asChild variant={variant}  className={`cursor-pointer py-6 ${className}`} onClick={onClick}>
+    <Button
+      asChild
+      variant={variant}
+      disabled={disabled}
+      className={`cursor-pointer py-6 ${className}`}
+      onClick={onClick}
+    >
       <Link to={link}>
         <p>{text}</p>
         {icons}

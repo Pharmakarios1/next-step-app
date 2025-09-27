@@ -1,12 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import RootLayout from './layout/RootLayout.js'
-import Home from './pages/Home.js'
+import Home from './pages/HomePage/Home.js'
 import About from './pages/About.js'
 import Bidboard from './pages/Bidboard.js'
 import Compare from './pages/Compare.js'
-import Login from './pages/auth/Login.js'
-import Signup from './pages/auth/Signup.js'
-import Dashboard from './pages/user/Dashboard.js'
+import Login from './pages/Auth/Login.js'
+import Signup from './pages/Auth/Signup.js'
+import Dashboard from './pages/UserDashboard/Dashboard.js'
 import { SignedIn, SignedOut } from '@clerk/clerk-react'
 
 const router = createBrowserRouter([
