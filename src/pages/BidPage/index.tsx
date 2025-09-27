@@ -9,12 +9,14 @@ import {
   SelectValue,
 } from '@/components/ui/select.js'
 import BidCard from '@/components/customs/BidCard.js'
+import { Link } from 'react-router-dom'
 
 export default function BidsPage() {
   const [filter, setFilter] = useState('all')
 
   const bids = [
     {
+      id: 1,
       image: '/CellPhone.svg',
       title: 'MacBook Pro 16” M1 Pro',
       description: 'Powerful laptop for creators and developers.',
@@ -27,6 +29,7 @@ export default function BidsPage() {
       badges: ['Hot', 'No Reserve'],
     },
     {
+      id: 2,
       image: '/Camera.svg',
       title: 'Abstract Painting',
       description: 'Original acrylic painting on canvas.',
@@ -39,6 +42,7 @@ export default function BidsPage() {
       badges: ['New'],
     },
     {
+      id: 2,
       image: '/Computer.svg',
       title: '2019 Tesla Model 3',
       description: 'Electric sedan, excellent condition.',
@@ -51,6 +55,7 @@ export default function BidsPage() {
       badges: ['Featured'],
     },
     {
+      id: 4,
       image: '/CellPhone.svg',
       title: '2019 Tesla Model 3',
       description: 'Electric sedan, excellent condition.',
@@ -90,9 +95,11 @@ export default function BidsPage() {
       </div>
 
       {/* Grid of BidCards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 place-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-3 place-items-center">
         {filteredBids.map((bid, i) => (
-          <BidCard key={i} {...bid} />
+          <Link to={`/bids/${bid.id}`}>
+            <BidCard key={i} {...bid} />
+          </Link>
         ))}
       </div>
     </div>

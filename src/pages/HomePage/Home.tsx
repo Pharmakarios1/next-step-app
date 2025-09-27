@@ -1,10 +1,8 @@
 import CustomCarousel from '@/components/customs/Carousel.js'
 import CustomTabs from '@/components/customs/CustomTabs.js'
 import Hero from '@/components/customs/Hero.js'
-import Categories from '@/components/customs/search/Categories.js'
-import Listing from '../BidPage/index.js'
 import BidsPage from '../BidPage/index.js'
-import BidDetailPage from '../BidPage/_partials/BidMenu/Index.js'
+import BidDetailPage from '../BidPage/_partials/BidDetailPage/Index.js'
 
 const Home = () => {
   return (
@@ -12,7 +10,6 @@ const Home = () => {
       <CustomCarousel />
       <Hero />
       <BidsPage />
-      <BidDetailPage />
       <CustomTabs />
     </main>
   )

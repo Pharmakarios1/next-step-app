@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Separator } from '@/components/ui/separator'
+import { Separator } from '@/components/ui/separator.js'
 import {
   Table,
   TableBody,
@@ -10,9 +10,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table'
+} from '@/components/ui/table.js'
 import { Clock, Heart, Share2 } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils.js'
 
 export default function BidDetailPage() {
   const { id } = useParams()
