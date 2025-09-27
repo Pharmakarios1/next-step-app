@@ -43,7 +43,7 @@ const CustomCarousel = () => {
           <CarouselItem key={index} className=" md:basis-[50%]">
             <div className="">
               <Card className="border-none shadow-none outline-0">
-                <CardContent className="flex items-center justify-center px-3 pb-4">
+                <CardContent className="flex items-center justify-center px-3 pb-4 ">
                   <h1 className=" text-5xl  md:text-7xl  font-body font-bold text-gradient">
                     {' '}
                     {_.boldtext}

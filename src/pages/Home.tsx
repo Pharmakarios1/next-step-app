@@ -6,10 +6,10 @@ import Listing from './bidListing/Listing.js'
 
 const Home = () => {
   return (
-    <main className="main-layout">
+    <main className="main-layout my-10">
       <CustomCarousel />
       <Hero />
-      <Listing/>
+      <Listing />
       <CustomTabs />
     </main>
   )

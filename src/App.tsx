@@ -3,10 +3,10 @@ import RootLayout from './layout/RootLayout.js'
 import Home from './pages/Home.js'
 import About from './pages/About.js'
 import Bidboard from './pages/Bidboard.js'
-import Lotmatch from './pages/Lotmatch.js'
+import Compare from './pages/Compare.js'
 import Login from './pages/auth/Login.js'
 import Signup from './pages/auth/Signup.js'
-import Dashboard from './pages/Dashboard.js'
+import Dashboard from './pages/user/Dashboard.js'
 import { SignedIn, SignedOut } from '@clerk/clerk-react'
 
 const router = createBrowserRouter([
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: 'about', element: <About /> },
       { path: '/bidboard', element: <Bidboard /> },
-      { path: '/lotmatch', element: <Lotmatch /> },
+      { path: '/compare', element: <Compare /> },
       {
         path: '/login',
         element: (

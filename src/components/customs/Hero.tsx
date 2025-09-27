@@ -21,7 +21,7 @@ const Hero = () => {
           variant="default"
           className="bg-gradient  min-w-1/2"
           text=" Compare Bids"
-          link="/lotmatch"
+          link="/compare"
           icons={<Scale />}
         />
       </div>

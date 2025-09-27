@@ -14,7 +14,7 @@ const Header = ({ isActive }) => {
   const tabs = [
     { id: 'home', label: 'Home', icon: <Home size={22} />, href: '/' },
     { id: 'bidboard', label: 'Bidboard', icon: <Trophy size={22} />, href: '/bidboard' },
-    { id: 'lotmatch', label: 'Compare', icon: <Scale size={22} />, href: '/lotmatch' },
+    { id: 'lotmatch', label: 'Compare', icon: <Scale size={22} />, href: '/compare' },
   ]
   return (
     <>
