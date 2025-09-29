@@ -38,7 +38,7 @@ export default function BidDetailPage() {
     { user: 'Emily Davis', amount: '$1,050', time: '30 min ago' },
   ]
 
-  const onPlaceBid =()=>{}
+  const onPlaceBid = () => {}
 
   return (
     <div className="main-layout mx-auto py-8">
@@ -106,6 +106,7 @@ export default function BidDetailPage() {
                 disabled={bid.status !== 'live'}
                 onClick={onPlaceBid}
                 text="Place Bid"
+                link="/bid"
               />
               <Button variant="ghost" size="icon">
                 <Heart size={18} />

@@ -10,6 +10,7 @@ import Dashboard from './pages/UserDashboard/Dashboard.js'
 import { SignedIn, SignedOut } from '@clerk/clerk-react'
 import BidsPage from './pages/BidPage/_partials/BidListing/index.js'
 import BidDetailPage from './pages/BidPage/_partials/BidDetailPage/Index.js'
+import PlaceBid from './pages/BidPage/_partials/PlaceBid/PlaceBid.js'
 
 const router = createBrowserRouter([
   {
@@ -47,8 +48,8 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/bids',
-        element: <BidsPage />,
+        path: '/bid',
+        element: <PlaceBid />,
       },
       {
         path: '/bids/:id',
