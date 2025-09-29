@@ -1,45 +1,34 @@
-import { useParams } from 'react-router-dom'
-import { Card, CardContent } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { Separator } from '@/components/ui/separator.js'
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table.js'
-import { Clock, Heart, Share2 } from 'lucide-react'
-import { cn } from '@/lib/utils.js'
+import { useParams } from "react-router-dom"
+import { Card, CardContent } from "@/components/ui/card.js"
+import { Button } from "@/components/ui/button.js"
+import { Badge } from "@/components/ui/badge.js"
+import { Separator } from "@/components/ui/separator.js"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table.js"
+import { Clock, Heart, Share2 } from "lucide-react"
+import { cn } from "@/lib/utils.js"
+import { bids } from '@/data/bid.js'
+
 
 export default function BidDetailPage() {
-  const { id } = useParams()
+  const { id } = useParams<{ id: string }>()
 
-  // 🔹 For demo: Mock data (replace with API call)
-  const bid = {
-    id,
-    image: '/images/macbook.jpg',
-    title: 'MacBook Pro 16” M1 Pro',
-    description:
-      'This is the 2021 MacBook Pro 16-inch with Apple’s M1 Pro chip, 16GB RAM, and 1TB SSD. Perfect for developers, designers, and creators needing top performance.',
-    category: 'Electronics',
-    currentBid: '$1,200',
-    startingPrice: '$1,000',
-    bidCount: 12,
-    timeRemaining: '2h 15m',
-    status: 'live' as const,
-    seller: 'TechStore LTD',
-    rating: 4.8,
-    badges: ['Hot', 'No Reserve'],
+  // ✅ Find the bid by ID
+  const bid = bids.find((b) => b.id === id)
+
+  if (!bid) {
+    return (
+      <div className="container mx-auto py-12 text-center">
+        <h2 className="text-xl font-bold">Bid not found</h2>
+        <p className="text-muted-foreground">The auction item you’re looking for doesn’t exist.</p>
+      </div>
+    )
   }
 
   const bidHistory = [
-    { user: 'John Doe', amount: '$1,200', time: '2 min ago' },
-    { user: 'Jane Smith', amount: '$1,150', time: '10 min ago' },
-    { user: 'Mark Johnson', amount: '$1,100', time: '20 min ago' },
-    { user: 'Emily Davis', amount: '$1,050', time: '30 min ago' },
+    { user: "John Doe", amount: bid.currentBid, time: "2 min ago" },
+    { user: "Jane Smith", amount: "$1,150", time: "10 min ago" },
+    { user: "Mark Johnson", amount: "$1,100", time: "20 min ago" },
+    { user: "Emily Davis", amount: "$1,050", time: "30 min ago" },
   ]
 
   return (
@@ -48,7 +37,11 @@ export default function BidDetailPage() {
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Left: Image */}
           <div className="relative">
-            <img src={bid.image} alt={bid.title} className="h-full w-full object-cover" />
+            <img
+              src={bid.image}
+              alt={bid.title}
+              className="h-full w-full object-cover"
+            />
             <div className="absolute top-2 left-2 flex gap-1">
               {bid.badges.map((badge, i) => (
                 <Badge key={i} variant="secondary" className="capitalize">
@@ -73,10 +66,12 @@ export default function BidDetailPage() {
                 <span className="font-medium">Seller:</span> {bid.seller}
               </div>
               <div>
-                <span className="font-medium">Current Bid:</span> {bid.currentBid}
+                <span className="font-medium">Current Bid:</span>{" "}
+                {bid.currentBid}
               </div>
               <div>
-                <span className="font-medium">Starting Price:</span> {bid.startingPrice}
+                <span className="font-medium">Starting Price:</span>{" "}
+                {bid.startingPrice}
               </div>
               <div>
                 <span className="font-medium">Total Bids:</span> {bid.bidCount}
@@ -92,10 +87,10 @@ export default function BidDetailPage() {
             <div className="flex items-center gap-2">
               <span
                 className={cn(
-                  'px-3 py-1 rounded-full text-xs font-semibold uppercase',
-                  bid.status === 'live' && 'bg-green-100 text-green-700',
-                  //   bid.status === "upcoming" && "bg-yellow-100 text-yellow-700",
-                  //   bid.status === "closed" && "bg-red-100 text-red-700"
+                  "px-3 py-1 rounded-full text-xs font-semibold uppercase",
+                  bid.status === "live" && "bg-green-100 text-green-700",
+                  bid.status === "upcoming" && "bg-yellow-100 text-yellow-700",
+                  bid.status === "closed" && "bg-red-100 text-red-700"
                 )}
               >
                 {bid.status}
@@ -103,7 +98,7 @@ export default function BidDetailPage() {
             </div>
 
             <div className="flex gap-3 pt-2">
-              <Button className="flex-1" disabled={bid.status !== 'live'}>
+              <Button className="flex-1" disabled={bid.status !== "live"}>
                 Place Bid
               </Button>
               <Button variant="ghost" size="icon">

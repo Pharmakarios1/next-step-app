@@ -8,7 +8,7 @@ import Login from './pages/Auth/Login.js'
 import Signup from './pages/Auth/Signup.js'
 import Dashboard from './pages/UserDashboard/Dashboard.js'
 import { SignedIn, SignedOut } from '@clerk/clerk-react'
-import BidsPage from './pages/BidPage/index.js'
+import BidsPage from './pages/BidPage/_partials/BidListing/index.js'
 import BidDetailPage from './pages/BidPage/_partials/BidDetailPage/Index.js'
 
 const router = createBrowserRouter([
