@@ -43,7 +43,7 @@ const BidCard = ({
   onPlaceBid,
   onWatch,
   onShare,
-}: BidCardProps ) => {
+}: BidCardProps) => {
   const navigate = useNavigate()
   return (
     <Card className="w-full max-w-sm overflow-hidden rounded-2xl shadow-md ">
@@ -110,7 +110,7 @@ const BidCard = ({
           text="Place Bid"
         />
 
-        <Button variant="ghost" size="icon"  onClick={() => navigate(`/bids/${id}`)}>
+        <Button variant="ghost" size="icon" onClick={() => navigate(`/bids/${id}`)}>
           <InfoIcon />
         </Button>
 

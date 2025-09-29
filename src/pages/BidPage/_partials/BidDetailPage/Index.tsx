@@ -1,13 +1,20 @@
-import { useParams } from "react-router-dom"
-import { Card, CardContent } from "@/components/ui/card.js"
-import { Button } from "@/components/ui/button.js"
-import { Badge } from "@/components/ui/badge.js"
-import { Separator } from "@/components/ui/separator.js"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table.js"
-import { Clock, Heart, Share2 } from "lucide-react"
-import { cn } from "@/lib/utils.js"
+import { useParams } from 'react-router-dom'
+import { Card, CardContent } from '@/components/ui/card.js'
+import { Button } from '@/components/ui/button.js'
+import { Badge } from '@/components/ui/badge.js'
+import { Separator } from '@/components/ui/separator.js'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table.js'
+import { Clock, Heart, Share2 } from 'lucide-react'
+import { cn } from '@/lib/utils.js'
 import { bids } from '@/data/bid.js'
-
+import CustomButton from '@/components/customs/CustomButton.js'
 
 export default function BidDetailPage() {
   const { id } = useParams<{ id: string }>()
@@ -25,23 +32,21 @@ export default function BidDetailPage() {
   }
 
   const bidHistory = [
-    { user: "John Doe", amount: bid.currentBid, time: "2 min ago" },
-    { user: "Jane Smith", amount: "$1,150", time: "10 min ago" },
-    { user: "Mark Johnson", amount: "$1,100", time: "20 min ago" },
-    { user: "Emily Davis", amount: "$1,050", time: "30 min ago" },
+    { user: 'John Doe', amount: bid.currentBid, time: '2 min ago' },
+    { user: 'Jane Smith', amount: '$1,150', time: '10 min ago' },
+    { user: 'Mark Johnson', amount: '$1,100', time: '20 min ago' },
+    { user: 'Emily Davis', amount: '$1,050', time: '30 min ago' },
   ]
 
+  const onPlaceBid =()=>{}
+
   return (
-    <div className="container mx-auto py-8">
+    <div className="main-layout mx-auto py-8">
       <Card className="overflow-hidden rounded-2xl shadow-lg">
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Left: Image */}
           <div className="relative">
-            <img
-              src={bid.image}
-              alt={bid.title}
-              className="h-full w-full object-cover"
-            />
+            <img src={bid.image} alt={bid.title} className="h-full w-full object-cover" />
             <div className="absolute top-2 left-2 flex gap-1">
               {bid.badges.map((badge, i) => (
                 <Badge key={i} variant="secondary" className="capitalize">
@@ -66,12 +71,10 @@ export default function BidDetailPage() {
                 <span className="font-medium">Seller:</span> {bid.seller}
               </div>
               <div>
-                <span className="font-medium">Current Bid:</span>{" "}
-                {bid.currentBid}
+                <span className="font-medium">Current Bid:</span> {bid.currentBid}
               </div>
               <div>
-                <span className="font-medium">Starting Price:</span>{" "}
-                {bid.startingPrice}
+                <span className="font-medium">Starting Price:</span> {bid.startingPrice}
               </div>
               <div>
                 <span className="font-medium">Total Bids:</span> {bid.bidCount}
@@ -87,10 +90,10 @@ export default function BidDetailPage() {
             <div className="flex items-center gap-2">
               <span
                 className={cn(
-                  "px-3 py-1 rounded-full text-xs font-semibold uppercase",
-                  bid.status === "live" && "bg-green-100 text-green-700",
-                  bid.status === "upcoming" && "bg-yellow-100 text-yellow-700",
-                  bid.status === "closed" && "bg-red-100 text-red-700"
+                  'px-3 py-1 rounded-full text-xs font-semibold uppercase',
+                  bid.status === 'live' && 'bg-green-100 text-green-700',
+                  bid.status === 'upcoming' && 'bg-yellow-100 text-yellow-700',
+                  bid.status === 'closed' && 'bg-red-100 text-red-700',
                 )}
               >
                 {bid.status}
@@ -98,9 +101,12 @@ export default function BidDetailPage() {
             </div>
 
             <div className="flex gap-3 pt-2">
-              <Button className="flex-1" disabled={bid.status !== "live"}>
-                Place Bid
-              </Button>
+              <CustomButton
+                className="flex-1 bg-gradient"
+                disabled={bid.status !== 'live'}
+                onClick={onPlaceBid}
+                text="Place Bid"
+              />
               <Button variant="ghost" size="icon">
                 <Heart size={18} />
               </Button>

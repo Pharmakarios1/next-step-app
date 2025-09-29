@@ -11,7 +11,6 @@ import {
 import BidCard from '@/components/customs/BidCard.js'
 import { bids } from '@/data/bid.js'
 
-
 export default function BidsPage() {
   const [filter, setFilter] = useState('all')
 
